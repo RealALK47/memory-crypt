@@ -15,7 +15,7 @@ int main()
 {
 	DWORD func_size = process_size((DWORD*)&malicious_function, (DWORD*)&stub_function);
 
-	// On initialise le client en chiffrant la fonction pour quelle soit illisible.
+	// On initialise le client en chiffrant la fonction pour qu'elle soit illisible.
 	memcrypt((DWORD)&malicious_function, func_size);
 	// Désormais impossible d'executer `malicious_function()`.
 
